@@ -12,7 +12,7 @@
 		header("Location: ../general/alert.php?alert=This email was already used&direct=../login/login.html");
 	} else {
 		$sql = "INSERT INTO `Users` (email, firstname, lastname, password)"
-				." VALUES (\"$email\", \"$firstName\", \"$lastName\", \""
+				." VALUES (\"".$email."\", \"".$firstName."\", \"".$lastName."\", \""
 				.md5($password)."\")";
 		$connection->query($sql);
 		header("Location: ../general/alert.php?alert=Registration successful!&direct=../login/register.html");		
